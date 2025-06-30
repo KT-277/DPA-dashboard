@@ -1,0 +1,9 @@
+<<<<<<< HEAD
+fastapi
+uvicorn
+python-jose
+passlib[bcrypt]
+python-multipart
+=======
+requests
+>>>>>>> 64ca66abd68f2b4814f91f2920f6ed6c54fb7e44
