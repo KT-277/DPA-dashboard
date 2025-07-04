@@ -5,8 +5,8 @@ class ThreatIndicator(Base):
     __tablename__ = "threat_indicators"
 
     id = Column(Integer, primary_key=True, index=True)
-    name = Column(String, index=True)
-    description = Column(String)
-    severity = Column(String)
+    ip = Column(String, index=True)
+    type = Column(String, index=True)
     timestamp = Column(DateTime)
+    is_anomaly = Column(String, default="False")
 

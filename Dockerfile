@@ -8,8 +8,13 @@ WORKDIR /app
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy your Python script into the container
-COPY otx_ingest.py .
+# Copy your FastAPI script and model file
+COPY predict_service.py .
+COPY anomaly_model.pkl .
 
-# Set the default command to run the script
-CMD ["python", "otx_ingest.py"]
+# Expose port 8000
+EXPOSE 8000
+
+# Run FastAPI app with Uvicorn
+CMD ["uvicorn", "predict_service:app", "--host", "0.0.0.0", "--port", "8000"]
+
